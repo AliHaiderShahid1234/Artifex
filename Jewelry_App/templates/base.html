@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}Artifex{% endblock %}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+<header class="bg-white text-gray-800 shadow-md">
+  <div class="container mx-auto flex flex-wrap p-4 md:flex-row items-center justify-between">
+    
+    <!-- Logo & Brand -->
+    <a href="{% url 'home' %}" class="flex items-center mb-2 md:mb-0">
+      <img src="{% static 'logo.png' %}" alt="Artifex Logo" class="h-10 w-10 mr-2">
+      <span class="text-2xl font-bold tracking-tight text-red-700">Artifex</span>
+    </a>
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-wrap items-center text-base gap-x-6 justify-center">
+      <a href="{% url 'home' %}" class="hover:text-green-700">Home</a>
+      <a href="#" class="hover:text-green-700">Features</a>
+      <a href="#" class="hover:text-green-700">About</a>
+      <a href="#" class="hover:text-green-700">Contact</a>
+    </nav>
+
+    <!-- Auth Buttons -->
+    <div class="flex items-center mt-4 md:mt-0 space-x-3">
+      <a href="{% url 'register' %}" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-200 transition">Register</a>
+      <a href="{% url 'login' %}" class="bg-red-700 text-white px-4 py-2 rounded hover:bg-red-200 transition">Login</a>
+    </div>
+    
+  </div>
+</header>
+
+    <main class="min-h-screen">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+<footer class="bg-gray-50 text-gray-700 body-font border-t border-gray-200">
+  <div class="container px-5 py-16 mx-auto flex md:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <!-- Logo & Description -->
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+      <a href="{% url 'home' %}" class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <img src="{% static 'logo.png' %}" alt="Artifex Logo" class="h-10 w-10 rounded-full bg-red-600 p-1">
+        <span class="ml-3 text-xl font-semibold text-red-700">Artifex</span>
+      </a>
+      <p class="mt-2 text-sm text-gray-500">The modern workshop system crafted for true craftsmen.</p>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Quick Links</h2>
+        <nav class="list-none mb-10 space-y-2">
+          <li><a href="{% url 'home' %}" class="hover:text-red-600">Home</a></li>
+          <li><a href="#" class="hover:text-red-600">Features</a></li>
+          <li><a href="#" class="hover:text-red-600">About</a></li>
+          <li><a href="#" class="hover:text-red-600">Contact</a></li>
+        </nav>
+      </div>
+
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Account</h2>
+        <nav class="list-none mb-10 space-y-2">
+          <li><a href="{% url 'login' %}" class="hover:text-red-600">Login</a></li>
+          <li><a href="{% url 'register' %}" class="hover:text-red-600">Register</a></li>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bg-gray-100">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class="text-gray-500 text-sm text-center sm:text-left">
+        © 2025 Artifex — Built with passion for jewelers.
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+        <!-- Social icons if needed -->
+        <a href="#" class="text-gray-500 hover:text-red-600">
+          <svg fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>
