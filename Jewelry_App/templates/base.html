@@ -8,25 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
-<header class="bg-white text-gray-800 shadow-md">
+  <body class="bg-gray-800">
+<header class="text-gray-800 bg-white/12 backdrop-blur-md border-b border-white/20 top-0 sticky">
   <div class="container mx-auto flex flex-wrap p-4 md:flex-row items-center justify-between">
     
-    <!-- Logo & Brand -->
     <a href="{% url 'home' %}" class="flex items-center mb-2 md:mb-0">
       <img src="{% static 'logo.png' %}" alt="Artifex Logo" class="h-10 w-10 mr-2">
       <span class="text-2xl font-bold tracking-tight text-red-700">Artifex</span>
     </a>
-
-    <!-- Navigation Links -->
-    <nav class="flex flex-wrap items-center text-base gap-x-6 justify-center">
+    <nav class="flex flex-wrap items-center text-base gap-x-6 justify-center text-white">
       <a href="{% url 'home' %}" class="hover:text-green-700">Home</a>
       <a href="#" class="hover:text-green-700">Features</a>
       <a href="#" class="hover:text-green-700">About</a>
       <a href="#" class="hover:text-green-700">Contact</a>
     </nav>
 
-    <!-- Auth Buttons -->
     <div class="flex items-center mt-4 md:mt-0 space-x-3">
       <a href="{% url 'register' %}" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-200 transition">Register</a>
       <a href="{% url 'login' %}" class="bg-red-700 text-white px-4 py-2 rounded hover:bg-red-200 transition">Login</a>
@@ -40,7 +36,7 @@
         {% endblock %}
     </main>
 
-<footer class="bg-gray-50 text-gray-700 body-font border-t border-gray-200">
+<footer class="bg-gray-800 text-white body-font border-t border-gray-200">
   <div class="container px-5 py-16 mx-auto flex md:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
     <!-- Logo & Description -->
     <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
@@ -74,7 +70,7 @@
   </div>
 
   <!-- Bottom Bar -->
-  <div class="bg-gray-100">
+  <div class="bg-gray-900">
     <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
       <p class="text-gray-500 text-sm text-center sm:text-left">
         © 2025 Artifex — Built with passion for jewelers.
